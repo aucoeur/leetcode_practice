@@ -15,6 +15,21 @@ You may assume that each input would have exactly one solution, and you may not 
             return [0, 1].
 '''
 
+'''
+    1. Restate the problem
+        I need to find two numbers that equal the target number when added together and return their index in the array.
+
+    2. Ask clarifying questions
+        Are there duplicates in this array? If so, would a duplicate be considered different elements since they'd have unique indices or should I remove duplicates first?
+
+    3. State your assumptions
+        I'm assuming each input has exactly one solution
+        I'm assuming each element can only be used once
+
+    4. Think out loud
+        See in-code comments for rationale
+'''
+
 class Solution:
     def two_sum(self, nums: List[int], target: int) -> List[int]:
         checked = {}
@@ -37,4 +52,5 @@ if __name__ == "__main__":
     target = 9
 
     answer = Solution().two_sum(nums, target)
+    print(f"Given the array: {nums}\n and the target: {target}")
     print(f"Indices of number in nums that add up to target: {answer}")
