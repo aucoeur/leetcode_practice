@@ -44,6 +44,9 @@ class Solution:
         nums.sort()
 
         for index, each in enumerate(nums):
+            # This will run within leetcode time limit [part1] (https://leetcode.com/problems/3sum/discuss/183155/Two-pointer-python-solution-wexplanation-beats-91.75)
+            if index > 0 and nums[index]==nums[index-1]:
+                continue
             # Set starting index to next num in array, set last to last index in array
             start = index + 1
             end = len(nums) - 1
@@ -53,9 +56,18 @@ class Solution:
                 sum_triplet = (each + nums[start] + nums[end])
                 if sum_triplet == 0:
                     triplet = [each, nums[start], nums[end]]
-                    # Avoid adding duplicate triplets 
-                    if triplet not in solutions:
-                        solutions.append(triplet)
+
+                    # Avoid adding duplicate triplets  (too slow to pass leetcode)
+                    # if triplet not in solutions:
+                    #     solutions.append(triplet)
+
+                    # This will run within leetcode time limit [part2] (https://leetcode.com/problems/3sum/discuss/183155/Two-pointer-python-solution-wexplanation-beats-91.75)
+                    solutions.append(triplet)
+                    while start < end and nums[start] == nums[start+1]:
+                        start += 1
+                    while start < end and nums[end] == nums[end-1]:
+                        end -= 1
+
                     # Move both pointers up/down 1 respectively
                     start += 1
                     end -= 1
