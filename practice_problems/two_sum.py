@@ -1,7 +1,6 @@
 from typing import List
 
-'''
-Leetcode #1: https://leetcode.com/problems/two-sum/ - Easy
+''' Leetcode #1: https://leetcode.com/problems/two-sum/ - Easy
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -15,7 +14,7 @@ You may assume that each input would have exactly one solution, and you may not 
             return [0, 1].
 '''
 
-'''
+''' Communication Steps
     1. Restate the problem
         I need to find two numbers that equal the target number when added together and return their index in the array.
 
@@ -27,7 +26,7 @@ You may assume that each input would have exactly one solution, and you may not 
         I'm assuming each element can only be used once
 
     4. Think out loud
-        See in-code comments for rationale
+        I can run through the array and find each number's corresponding partner by subtracting it from the target number.  I can use a queue to keep track of numbers I've already encountered.  If I subtract a number and I've already encountered its remainder, then those two are each other's complementary numbers, so I return their indices.  Since I need to return indices, my queue should be able to hold both numbers and their indices.  If I haven't encountered the remainder, then I add them to the queue.
 '''
 
 class Solution:
