@@ -1,2 +1,2 @@
-# Practice Problems from LeetCode
-> https://leetcode.com
+# Practice Problems from Group Breakout Sessions
+> SPD 1.41
