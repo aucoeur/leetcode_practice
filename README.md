@@ -1,2 +1,3 @@
-# Practice Problems from Group Breakout Sessions
-> SPD 1.41
+# Practice Problems for SPD 1.41
+> https://leetcode.com   
+> https://exercism.io
